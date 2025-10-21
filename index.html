@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>charity: water — See Your Impact Flow</title>
+
+  <!-- Google Fonts (beginner-friendly, no build tools needed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <!-- Simple text lockup; swap for your SVG/PNG later -->
+        <span class="brand-mark" aria-hidden="true">🪣</span>
+        <span class="brand-text">charity: water</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <div class="container hero-grid">
+      <section class="hero-copy">
+        <h1 class="hero-title">
+          See Your<br />
+          Impact Flow
+        </h1>
+
+        <p class="hero-sub">
+          Track the water projects you help fund. Meet the families you help empower.
+          Every dollar you donate moves clean water closer to home for millions.
+        </p>
+
+        <form class="cta" action="#" method="get">
+          <label class="sr-only" for="project">Project name</label>
+          <input id="project" name="project" type="text" placeholder="Fund a project and watch it grow!" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <figure class="hero-media">
+        <!-- Use your own image later: put the file in /images and update the path -->
+        <img src="images/hero.jpg" alt="Smiling child at a village water pump" />
+      </figure>
+    </div>
+  </main>
+
+  <!-- (Optional) Tiny footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> charity: water — Demo landing</small>
+    </div>
+  </footer>
+
+  <!-- No JS required; this one-liner just keeps the year current -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
