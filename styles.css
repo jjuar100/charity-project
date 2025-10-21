@@ -1,0 +1,147 @@
+/* ============== Base / Tokens ============== */
+:root{
+  --navy: #163A63;        /* deep hero background (matches your design vibe) */
+  --navy-900: #0F2D4B;    /* darker shade (not mandatory) */
+  --text: #ffffff;        /* white on navy */
+  --muted: #d9e3ef;       /* soft text on forms */
+  --field-bg: #f2f6fb;    /* light field */
+  --field-border: #e2e8f0;/* subtle field border */
+  --brand-yellow: #F7C948;/* charity: water-like yellow */
+  --brand-yellow-press: #E5B52E;
+
+  --container: 1200px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--navy);
+  line-height:1.5;
+}
+
+/* ============== Layout helpers ============== */
+.container{
+  width: min(92%, var(--container));
+  margin-inline: auto;
+}
+
+/* ============== Header ============== */
+.site-header{
+  background: #0c233d00; /* transparent over hero */
+  padding: 18px 0;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:flex-start;
+}
+.brand{
+  display:inline-flex; align-items:center; gap:.6rem;
+  text-decoration:none; color: var(--text);
+  font-weight: 700; letter-spacing:.2px;
+}
+.brand-mark{ 
+  display:inline-grid; place-items:center; 
+  width:34px; height:34px; border-radius:8px; 
+  background: var(--brand-yellow); color:#1c1c1c; font-size:18px;
+}
+.brand-text{ font-size:1.25rem; }
+
+/* ============== Hero ============== */
+.hero{
+  padding: 32px 0 72px;  /* extra breathing room */
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr 1fr; /* copy / image */
+  align-items:center;
+  gap: 40px;
+}
+.hero-title{
+  margin: 16px 0 12px;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4.8vw + .5rem, 4.5rem);
+  line-height: 1.06;
+  letter-spacing: .2px;
+}
+.hero-sub{
+  color: var(--muted);
+  max-width: 48ch;
+  margin: 10px 0 28px;
+  font-size: clamp(1rem, .7vw + .8rem, 1.125rem);
+}
+.cta{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  background: #ffffff12;         /* slight translucent band */
+  padding: 10px;
+  border-radius: var(--radius-pill);
+  width: min(640px, 100%);
+}
+.cta input{
+  flex:1;
+  padding: 18px 20px;
+  border: 1px solid var(--field-border);
+  background: var(--field-bg);
+  color:#0f172a;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  outline: none;
+}
+.cta input::placeholder{ color:#8aa0b8; }
+.cta button{
+  padding: 16px 28px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--brand-yellow);
+  color:#1b1b1b;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor:pointer;
+  transition: transform .06s ease, background .15s ease;
+}
+.cta button:active{ transform: translateY(1px); background: var(--brand-yellow-press); }
+
+/* Right-side image */
+.hero-media{
+  margin:0;
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+.hero-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+/* ============== Footer ============== */
+.site-footer{
+  padding: 36px 0 48px;
+  color: #c7d6e8;
+  font-size: .95rem;
+  text-align:left;
+}
+
+/* ============== A11y ============== */
+.sr-only{
+  position:absolute !important;
+  height:1px;width:1px;overflow:hidden;
+  clip:rect(1px, 1px, 1px, 1px);
+  white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+/* ============== Responsive tweaks ============== */
+@media (max-width: 980px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .hero-media{ order:-1; } /* image above text on mobile, like many landing pages */
+  .cta{ padding: 8px; }
+}
